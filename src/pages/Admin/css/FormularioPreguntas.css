@@ -1,0 +1,159 @@
+/* Variables de color y tipografía */
+:root {
+  --color-bg: #f5f7fa;
+  --color-card: #ffffff43;
+  --color-primary: #4f46e5;
+  --color-primary-hover: #3730a3;
+  --color-secondary: #6b7280;
+  --color-border: #e5e7eb;
+  --color-error: #ef4444;
+  --font-base: "Oswald", sans-serif;
+  --radius: 0.5rem;
+  --spacing: 1rem;
+}
+
+h2,
+h3 {
+  font-weight: 600;
+  color: #ffb030;
+}
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing);
+}
+h3 {
+  font-size: 1.25rem;
+  margin-top: var(--spacing);
+  margin-bottom: 0.5rem;
+}
+
+/* Contenedor principal */
+.formulario-evaluacion {
+  max-width: 80%;
+  margin: 2rem auto;
+  margin-top: 100px;
+  padding: var(--spacing);
+  background: var(--color-card);
+  font-family: var(--font-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Secciones de preguntas */
+.seccion {
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  margin-bottom: var(--spacing);
+  border: 1px solid var(--color-border);
+}
+.seccion ul {
+  list-style: none;
+  margin-top: 0.5rem;
+  color: #000000;
+}
+.seccion li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.seccion li:last-child {
+  border-bottom: none;
+}
+
+/* Formulario para nueva pregunta */
+.nueva-pregunta-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing);
+  margin-top: var(--spacing);
+}
+
+/* Inputs y selects */
+.nueva-pregunta-form input[type="text"],
+.nueva-pregunta-form select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+.nueva-pregunta-form input:focus,
+.nueva-pregunta-form select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Contenedor de opciones dinámicas */
+.opciones-container {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--spacing);
+}
+.opcion-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.opcion-input input {
+  flex: 1;
+}
+.opcion-input button {
+  padding: 0 1rem;
+  border: none;
+  background: var(--color-primary);
+  color: #000000;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.opcion-input button:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Lista de opciones agregadas */
+.lista-opciones {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.lista-opciones li {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+.lista-opciones li button {
+  background: transparent;
+  border: none;
+  color: var(--color-error);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.lista-opciones li button:hover {
+  color: #b91c1c;
+}
+
+/* Botón de envío */
+.nueva-pregunta-form button[type="submit"] {
+  padding: 0.75rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.nueva-pregunta-form button[type="submit"]:hover {
+  background: var(--color-primary-hover);
+}

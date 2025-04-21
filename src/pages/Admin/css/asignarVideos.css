@@ -1,0 +1,123 @@
+.asignar-container {
+    padding: 2rem;
+    background: #121212;
+    color: #f5f5f5;
+    border-radius: 12px;
+    max-width: 95%;
+    margin: 100px auto 0 auto;
+    min-height: 100vh;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .archivo-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .archivo-col {
+    width: 40%;
+    background: #1e1e1e;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .archivo-col h3 {
+    margin-bottom: 1rem;
+    color: #00bfa6;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .archivo-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .archivo-card {
+    width: 100px;
+    padding: 0.5rem;
+    background: #2a2a2a;
+     border: 2px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .archivo-card img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .archivo-card span {
+    display: block;
+    margin-top: 0.5rem;
+    color: #ccc;
+    font-size: 0.85rem;
+  }
+
+  .archivo-card.seleccionado {
+    border-color: #00bfa6;
+    background-color: #1c1c1c;
+  }
+
+  .archivo-card.asignado {
+    border-color: #888;
+    cursor: default;
+  }
+
+  .botones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    background-color: #00bfa6;
+    border: none;
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #00a896;
+  }
+
+  .btn-subir {
+    background-color: #1e88e5;
+    color: #fff;
+  }
+
+  .btn-subir:hover {
+    background-color: #1565c0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .archivo-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .archivo-col {
+      width: 90%;
+    }
+  }

@@ -1,0 +1,167 @@
+/* src/styles/Formulario.css */
+.formulario-container {
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Oswald", sans-serif;
+}
+
+.formulario-informacion {
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: "Oswald", sans-serif;
+  color: #ffffff; /* Texto en blanco */
+  font-size: 18px;
+}
+
+.formulario-informacion p {
+  text-align: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.formulario {
+  max-width: 60%; /* Ancho máximo del formulario */
+  height: auto; /* Altura automática */
+  margin: auto; /* Centra el formulario */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: transparent; /* Se mantiene transparente */
+  padding-top: 55px;
+  font-family: "Oswald", sans-serif;
+}
+
+/* Botón de envío: fondo negro, texto blanco */
+.formulario-boton-enviar {
+  background-color: #000000; /* Negro */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  color: #ffffff; /* Blanco */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+.formulario-titulo {
+  text-align: center;
+  color: #ffffff; /* Blanco */
+  font-size: 22px;
+  margin-top: 55px;
+  margin-bottom: 20px;
+}
+
+.formulario-seccion {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  /* Fondo naranja con texto negro para alto contraste */
+  background-color: #ff6600; /* Naranja */
+  color: #000000; /* Negro */
+  font-size: 18px;
+}
+
+.formulario-etiqueta {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffffff; /* Blanco */
+}
+
+.formulario-input,
+.formulario-select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #000000; /* Negro */
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #ffffff; /* Blanco */
+  color: #000000; /* Negro */
+}
+
+/* Para indicar campos completados: fondo negro y texto naranja */
+.formulario-input-completado {
+  color: #ff6600; /* Naranja */
+  background-color: #000000; /* Negro */
+}
+
+.formulario-input:focus,
+.formulario-select:focus {
+  border-color: #ff6600; /* Naranja en foco */
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.5); /* Sombra naranja */
+}
+
+/* Botón genérico: fondo negro, texto blanco; en hover fondo naranja y texto negro */
+.formulario-boton {
+  width: 100%;
+  padding: 10px;
+  background-color: #000000; /* Negro */
+  color: #ffffff; /* Blanco */
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario-boton:hover {
+  background-color: #ff6600; /* Naranja */
+  color: #000000; /* Negro */
+}
+
+.formulario-boton:disabled {
+  background-color: #ffffff; /* Blanco */
+  color: #000000; /* Negro */
+  cursor: not-allowed;
+}
+
+/* Estilos para mensajes de alerta: fondo naranja y texto negro */
+.alert {
+  background-color: #ff6600; /* Naranja */
+  color: #000000; /* Negro */
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.formulario-cargando {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navegación del formulario */
+.formulario-navegacion {
+  display: flex; /* Flex para alinear los botones */
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Botones de navegación: ajustados para que sean 48% del contenedor */
+.formulario-boton {
+  width: 48%;
+}

@@ -1,0 +1,52 @@
+
+.rutinas-container-sin-completar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    font-family: "Oswald", sans-serif;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+
+    margin-top: 150px;
+    background-color: #ffce9f;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .pesas-rutina {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .rutinas-title-sin-completar {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .rutinas-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .rutinas-container button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .rutinas-container button:hover {
+    background-color: #0056b3;
+  }

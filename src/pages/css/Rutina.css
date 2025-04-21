@@ -1,0 +1,197 @@
+/* Estilos generales */
+.rutinas-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  padding-top: 50px; /* Reducido de 100px a 50px */
+  justify-content: center;
+  margin-top: 50px; /* Espacio superior */
+}
+
+/* Tarjeta de Rutina */
+.rutina-card-alumno {
+  background: #1e1e2e;
+  color: #fff;
+  border-radius: 12px;
+  padding: 15px; /* Reducido de 20px a 15px */
+  margin-bottom: 10px;
+  width: 90%;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rutina-card-alumno:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.rutinas-title {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Títulos internos */
+.rutina-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 6px; /* Reducido de 8px */
+}
+
+.rutina-description {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 8px; /* Reducido para compactar */
+}
+
+/* Tips */
+.rutina-tips {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px; /* Reducido gap */
+  background: #2b2b40;
+  padding: 5px; /* Reducido padding */
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.tip-item {
+  display: flex;
+  gap: 8px; /* Gap reducido */
+}
+
+.tip-icon {
+  color: #ffcc00;
+  font-size: 1.2rem;
+}
+
+.tip-text {
+  margin: 0;
+}
+
+/* Ejercicios */
+.ejercicios-container {
+  margin-top: 10px; /* Menor espacio superior */
+}
+
+.ejercicio-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* Reducido de 22px */
+  background: #25253a;
+  padding: 5px; /* Reducido de 10px */
+  margin-bottom: 5px; /* Reducido */
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+.ejercicio-card:hover {
+  background: #30304a;
+}
+
+.ejercicio-icon {
+  font-size: 1.5rem; /* Ligeramente menor */
+  color: #00bcd4;
+}
+
+.ejercicio-title {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.ejercicio-info {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.ejercicio-descanso {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Iconos pequeños */
+.icon-small {
+  font-size: 0.9rem; /* Reducido */
+  margin-right: 3px; /* Reducido */
+  position: relative;
+  top: 2px; /* Ajustado */
+  color: #ff9800;
+}
+
+/* Botones de acciones */
+.rutinas-buttons-action {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-action-comentario,
+.button-action-cambio {
+  margin-top: 10px; /* Reducido de 20px */
+  margin-bottom: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  padding: 10px 16px; /* Reducido padding */
+  font-size: 0.9rem; /* Reducido tamaño de fuente */
+}
+
+.button-action-comentario {
+  background-color: #ff660053;
+}
+
+.button-action-cambio {
+  background-color: #3981eeb4;
+}
+
+/* Botón para video */
+.ejercicio-icon-video {
+  font-size: 1.5rem; /* Reducido */
+  color: #ffffff;
+}
+
+.ejercicio-video-button {
+  background-color: #ff26007d;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px; /* Reducido */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  padding: 5px; /* Reducido */
+}
+
+.ejercicios-ver-video {
+  width: 10%;
+  height: auto; /* Se ajusta a contenido en lugar de 100% */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px; /* Reducido gap */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  padding: 5px; /* Reducido padding */
+}

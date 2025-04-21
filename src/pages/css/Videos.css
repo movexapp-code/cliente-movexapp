@@ -1,0 +1,37 @@
+.videos-container {
+  gap: 20px;
+  padding-top: 100px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.video-card {
+  background: #000000; /* Negro en lugar de gris oscuro */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.video-thumbnail {
+  width: 100%;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.video-card:hover .video-thumbnail {
+  opacity: 0.8;
+}

@@ -1,0 +1,125 @@
+.modal-rutina-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  font-family: "Oswald", sans-serif;
+}
+
+.modal-rutina-content {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #1f2937;
+  font-family: "Oswald", sans-serif;
+}
+
+.modal-rutina-form h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal-rutina-label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.modal-rutina-input {
+  width: 95%;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  color: #000000;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.modal-rutina-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.modal-rutina-ejercicios-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.modal-rutina-exercise-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  overflow-x: hidden;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.modal-rutina-btn-remove-exercise {
+  background: transparent;
+  border: none;
+  color: #4b5563;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-rutina-btn-add-exercise {
+  display: block;
+  margin: 0 auto 1rem;
+  background: #ffffff;
+  color: #4f46e5;
+  border: 1px dashed #4f46e5;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+.modal-rutina-btn-add-exercise:hover {
+  background: #eef2ff;
+}
+
+.modal-rutina-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.modal-rutina-btn-cancel,
+.modal-rutina-btn-submit {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-rutina-btn-cancel {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+.modal-rutina-btn-submit {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.modal-rutina-btn-submit:hover {
+  background: #3730a3;
+}

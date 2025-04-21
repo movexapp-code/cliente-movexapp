@@ -1,0 +1,72 @@
+:root {
+  --bg-page: #f0f4f8;
+  --bg-card: #ffffff;
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --border: #e5e7eb;
+  --text-base: #1f2937;
+  --radius: 0.5rem;
+  --spacing: 0.5rem;
+  --font: "Inter", sans-serif;
+}
+
+.crear-alumno-container {
+  max-width: 700px;
+  margin-top: 100px;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--spacing);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-family: var(--font);
+  color: var(--text-base);
+}
+
+.crear-alumno-container h2 {
+  text-align: center;
+  margin-bottom: calc(var(--spacing) * 1.5);
+}
+
+.crear-alumno-form {
+  display: grid;
+  gap: var(--spacing);
+}
+
+.crear-alumno-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.crear-alumno-form input,
+.crear-alumno-form select {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.crear-alumno-form input:focus,
+.crear-alumno-form select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.crear-alumno-form button {
+  padding: 0.75rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.crear-alumno-form button:hover {
+  background: var(--primary-dark);
+}

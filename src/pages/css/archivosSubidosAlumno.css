@@ -1,0 +1,218 @@
+/* Contenedor principal */
+.archivos-subidos-container {
+  width: 100%;
+  margin-top: 70px;
+  height: 100vh; /* Altura completa de la ventana */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Oswald", sans-serif;
+  color: #ffffff;
+}
+.sin-archivos {
+  font-size: 1.5rem;
+}
+
+/* Título principal */
+.archivos-subidos-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* Botón "Nuevo Archivo" */
+.subir-archivo-alumno {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #000000; /* Negro */
+  color: #ffffff; /* Blanco */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.subir-archivo-alumno:hover {
+  background-color: #ff6600; /* Naranja */
+  color: #000000;
+}
+
+.icon-archivo {
+  font-size: 1.3rem;
+}
+
+/* Tabla de archivos */
+.table-archivos-alumno {
+  width: 95%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: "Oswald", sans-serif;
+}
+
+/* Header de la tabla */
+.table-archivos-alumno-thead {
+  background-color: #ff6600; /* Naranja */
+  color: #ffffff; /* Blanco */
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table-archivos-alumno-thead th {
+  padding: 12px;
+}
+
+/* Cuerpo de la tabla */
+.table-archivos-alumno-tbody {
+  background-color: #ffffff; /* Blanco */
+  color: #000000; /* Negro */
+  font-size: 1rem;
+}
+
+.table-tr-archivos-alumno {
+  border-bottom: 1px solid #dddddd;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.table-tr-archivos-alumno:hover {
+  background-color: #ff6600; /* Naranja en hover */
+  color: #000000;
+}
+
+.table-archivos-alumno-td {
+  padding: 12px;
+  text-align: center;
+}
+
+/* Link para ver archivo */
+.ver-archivo-link {
+  color: #000000; /* Texto negro */
+  background-color: #ff6600; /* Naranja */
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  transition: background 0.3s ease;
+}
+
+.ver-archivo-link:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* ================= Modal Styles ================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente negro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff; /* Blanco */
+  color: #000000; /* Negro */
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  font-family: "Oswald", sans-serif;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #000000;
+  cursor: pointer;
+}
+
+.modal-header {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #000;
+  text-align: center;
+}
+
+.modal-body {
+  margin-bottom: 20px;
+}
+
+.modal-field {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-field label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.modal-field input[type="text"],
+.modal-field input[type="file"] {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  font-size: 1rem;
+  color: #000000;
+  background-color: antiquewhite;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-button-cancel {
+  background-color: #000000; /* Negro */
+  color: #ffffff; /* Blanco */
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-button-cancel:hover {
+  background-color: #ff6600; /* Naranja */
+  color: #000000;
+}
+
+.modal-button-submit {
+  background-color: #ff6600; /* Naranja */
+  color: #000000; /* Negro */
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-button-submit:hover {
+  background-color: #000000; /* Negro */
+  color: #ffffff;
+}
+
+.modal-error {
+  color: #ff0000;
+  margin-bottom: 10px;
+}

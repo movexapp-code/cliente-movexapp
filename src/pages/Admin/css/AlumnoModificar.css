@@ -1,0 +1,80 @@
+.alumno-modificar__container {
+  padding: 2rem;
+  background-color: #f9fafb28;
+  border-radius: 1rem;
+  max-width: 100%;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: "Oswald", sans-serif;
+}
+
+.alumno-modificar__titulo {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.alumno-modificar__form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.alumno-modificar__campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.alumno-modificar__campo label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-transform: capitalize;
+}
+
+.alumno-modificar__campo input {
+  padding: 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+.alumno-modificar__campo input {
+    background-color: #ffffff;
+    color: #374151; /* gray-700 */
+}
+
+.alumno-modificar__campo input:focus {
+  border-color: #ffa024;
+  outline: none;
+}
+
+.alumno-modificar__campo--checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.alumno-modificar__acciones {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.alumno-modificar__boton {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.alumno-modificar__boton:hover {
+  background-color: #1d4ed8;
+}

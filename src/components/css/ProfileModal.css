@@ -1,0 +1,101 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+
+  .modal-content {
+    background: #3a3a3a;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 320px;
+    color: #f0f0f0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.4s ease-out;
+  }
+
+ @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+      }
+
+      .modal-content {
+        background: #3a3a3a;
+        padding: 20px 30px;
+        border-radius: 10px;
+        width: 320px;
+        color: #f0f0f0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        animation: fadeIn 0.4s ease-out;
+      }
+
+
+
+
+      .modal-content h3 {
+        margin-bottom: 15px;
+      }
+
+      .modal-content form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .modal-content input {
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .modal-content button {
+        background: #4caf50;
+        color: white;
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .modal-content .close-button {
+        background: #d32f2f;
+      }
+
+      .modal-content button:hover {
+        filter: brightness(1.2);
+      }

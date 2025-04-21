@@ -1,0 +1,146 @@
+.container-videos-admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 100px;
+  background-color: #121212;
+}
+.titulo-panel {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.tabla-archivos {
+  width: 95%;
+
+  border-collapse: collapse;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.1);
+}
+
+.tabla-archivos thead {
+  background-color: #ffa726;
+  color: #121212;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.tabla-archivos th,
+.tabla-archivos td {
+  padding: 1rem;
+  border-bottom: 1px solid #ffa72633;
+}
+
+.tabla-archivos tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-archivos td {
+  vertical-align: middle;
+}
+
+.archivo-nombre {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.archivo-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.archivo-actions .btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  background-color: #ffa726;
+  transition: background 0.2s ease;
+}
+
+.archivo-actions .btn-download {
+  background-color: #555;
+}
+.archivo-actions .btn-view:hover {
+  background-color: #fb8c00;
+}
+.archivo-actions .btn-download:hover {
+  background-color: #777;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: rgb(121, 90, 55);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-content form input,
+.modal-content form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 8px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-crear {
+  margin-bottom: 20px;
+  background-color: #9c6819;
+}
+
+.preview-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.archivo-preview {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.icono-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}

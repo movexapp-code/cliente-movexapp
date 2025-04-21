@@ -1,0 +1,26 @@
+/* src/components/Layout.css */
+
+.layout-container {
+  min-height: 100vh;
+  display: flex;
+
+  flex-direction: column;
+  background: linear-gradient(#01031c 0%, #02276ad1 100%);
+}
+
+.btn-logout {
+  position: fixed;
+  bottom: 5px;
+  right: 20px;
+  background-color: #b5402b;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  padding: 6px 10px;
+  font-size: 1rem;
+}
+
+.btn-logout:hover {
+  background-color: #1a0200;
+}

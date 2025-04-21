@@ -1,0 +1,110 @@
+.rutina-container {
+  max-width: 100%;
+  margin: auto;
+  margin-top: 40px;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.rutina-titulo {
+  font-size: 24px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.rutina-container input {
+  background-color: #ffffff;
+  color: #000000;
+}
+.rutina-container textarea {
+  background-color: #ffffffc1;
+  color: #000000;
+}
+.textarea {
+  resize: vertical;
+}
+
+.ejercicio-card {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ff8f3f;
+  border-radius: 12px;
+  background-color: #f9f9f922;
+}
+
+.ejercicio-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.input {
+  flex: 1 1 80px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.textarea {
+  width: 100%;
+  margin-top: 12px;
+  height: 150px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.video-section {
+  flex: 1 1 100%;
+  margin-top: 12px;
+}
+
+.ejercicio-card h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ff8833;
+}
+.nuevo-ejercicio,
+.nuevo-tip {
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn-guardar {
+  background-color: #28a745;
+}
+
+.btn-guardar:hover {
+  background-color: #1e7e34;
+}
+
+.guardar-container {
+  margin-top: 2rem;
+  text-align: center;
+}

@@ -1,0 +1,52 @@
+/* Contenedor de la alerta */
+.alert {
+  position: fixed;
+  top: 70px;
+  right: 40px;
+  background: rgba(34, 182, 71, 0.536) !important;
+  color: white !important;
+  padding: 14px 18px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Animaciones */
+.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.hide {
+  transform: translateX(150%);
+  opacity: 0;
+}
+
+/* Ícono de alerta */
+.alert-icon {
+  font-size: 22px;
+}
+
+/* Mensaje */
+.alert-message {
+  flex: 1;
+}
+
+/* Botón de cierre */
+.alert-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.alert-close:hover {
+  transform: scale(1.2);
+}

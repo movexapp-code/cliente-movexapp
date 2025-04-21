@@ -1,0 +1,163 @@
+.alumno-panel {
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+  background-color: #121212;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 95%;
+  margin: 100px auto 0;
+  text-align: center;
+}
+
+.alumno-panel__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.alumno-panel__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffa726;
+}
+
+.alumno-panel__info p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.alumno-panel__tags {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  background-color: #ffa726;
+  color: #121212;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.alumno-panel__section {
+  margin-top: 2rem;
+}
+
+.alumno-panel__subtitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  border-bottom: 2px solid #ffa726;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.archivo-grid-detalle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.archivo-card-detalle {
+  background-color: #1e1e1e;
+  border: 1px solid #ffa72644;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.15);
+}
+
+.archivo-nombre {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.archivo-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  background-color: #ffa1139b;
+}
+
+.btn-outline {
+  border: 2px solid #ffa726;
+  background-color: transparent;
+  color: #ffa726;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background-color: #ffa726;
+  color: #121212;
+}
+
+.btn-back {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto;
+  background-color: #424242;
+}
+
+.alumno-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.rutina-card {
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ffa72633;
+}
+
+.rutina-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffa726;
+}
+
+.rutina-desc {
+  margin: 0.5rem 0 1rem;
+}
+
+.rutina-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.rutina-list li {
+  margin-bottom: 0.5rem;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  border-bottom: #ffa726 1px solid;
+  padding-bottom: 0.5rem;
+  list-style: none;
+}
+
+.alumno-panel__metrics {
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

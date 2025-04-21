@@ -1,0 +1,74 @@
+.dashboard-alumnos {
+  padding: 1.5rem;
+  margin-top: 60px;
+  font-family: "Oswald", sans-serif;
+
+  text-align: center;
+}
+
+.dashboard-alumnos__titulo {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.dashboard-alumnos__tabla-container {
+  overflow-x: auto;
+}
+
+.dashboard-alumnos__tabla {
+  min-width: 100%;
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+}
+
+.dashboard-alumnos__encabezado {
+  background-color: #e5e7eb; /* gray-200 */
+  color: #374151; /* gray-700 */
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.dashboard-alumnos__th,
+.dashboard-alumnos__td {
+  padding: 0.75rem 1rem;
+  font-size: 16px; /* text-sm */
+  color: #000000; /* text-gray-900 */
+}
+
+.dashboard-alumnos__td:nth-child(1) {
+  font-weight: 700;
+  color: #2563eb; /* blue-600 */
+}
+
+.dashboard-alumnos__fila {
+  transition: background-color 0.2s;
+}
+.dashboard-alumnos__fila:nth-child(even) {
+  background-color: #e0f0ff; /* gray-50 */
+}
+.dashboard-alumnos__fila:hover {
+  background-color: #c4e2ff;
+  cursor: pointer;
+}
+
+.dashboard-alumnos__boton-ver {
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.dashboard-alumnos__boton-ver:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+
+.dashboard-alumnos__sin-datos {
+  padding: 1rem;
+  text-align: center;
+  color: #6b7280; /* gray-500 */
+}

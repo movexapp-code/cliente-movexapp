@@ -1,0 +1,99 @@
+/* Fondo con gradiente */
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  font-family: "Oswald", sans-serif;
+}
+
+/* Caja del formulario */
+.login-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  width: 320px;
+  height: 490px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.icon-social{
+  font-size:35px;
+  color: white;
+  margin: 20px;
+}
+
+/* Logo */
+.logo {
+  width: 200px;
+  margin-bottom: -130px;
+  position: relative;
+  display: inline-block;
+  bottom: 130px;
+}
+
+/* Título */
+h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* Estilos de los inputs */
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid white;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Botón de ingreso */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: #60a5fa;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-login:hover {
+  background: #3b82f6;
+  transform: scale(1.05);
+}
+
+/* Link de registro */
+.register-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.register-link:hover {
+  color: white;
+}

@@ -1,0 +1,32 @@
+.circular-chart-container {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
+
+.circular-bg {
+  fill: none;
+  stroke: #e6e6e6; /* Color de fondo del círculo */
+}
+
+.circular-progress {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.circular-chart-text {
+  margin-top: 5px;
+  font-size: 22px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+}
+
+.chart-label {
+  display: block;
+  font-size: 15px;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+}

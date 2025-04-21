@@ -1,0 +1,111 @@
+.archivos-panel {
+    background-color: #121212;
+    padding: 2rem;
+    border-radius: 20px;
+    color: #fff;
+    max-width: 95%;
+    margin: 2rem auto;
+    font-family: "Oswald", sans-serif;
+  }
+
+  .archivos-panel h2 {
+    font-size: 2rem;
+    color: #ffa726;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .archivos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .archivo-card {
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #ffa72644;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.1);
+    max-width: 250px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .archivo-nombre {
+    font-weight: 600;
+    margin: 1rem 0;
+    word-wrap: break-word;
+    font-size: 1rem;
+  }
+
+  .archivo-preview {
+    height: 120px;
+    object-fit: contain;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+
+  .archivo-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .archivo-actions a,
+  .archivo-actions button {
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    background-color: #ffa726;
+    transition: background 0.2s ease;
+  }
+
+  .archivo-actions a:hover,
+  .archivo-actions button:hover {
+    background-color: #fb8c00;
+  }
+
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .upload-form input[type="file"] {
+    background-color: #1e1e1e;
+    border: 2px dashed #ffa726;
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .upload-form button {
+    padding: 0.7rem 1.5rem;
+    background-color: #00c853;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .upload-form button:hover {
+    background-color: #00b84d;
+  }

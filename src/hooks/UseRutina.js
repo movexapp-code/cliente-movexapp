@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
+import { AlumnosAdminApi } from "../api/Admin/Alumnos";
 
+const alumnoAdminApi = new AlumnosAdminApi();
 export const useRutinas = () => {
   const [rutinas, setRutinas] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,18 +27,9 @@ export const useRutinas = () => {
     const fetchData = async () => {
       try {
         setLoading(true); // Inicia el loading
-        const response = await fetch(
-          `http://localhost:8082/usuario/${userId}/rutinas/asignadas`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: "ad42fgte32gedrg4tvdf3HK6dsfHAS4",
-            },
-          }
-        );
-        if (!response.ok) throw new Error("Error al cargar las rutinas");
-        const data = await response.json();
+        const data = await alumnoAdminApi.getRutinasAlumno(userId);
+        console.log(data);
+
         setRutinas(data);
       } catch (error) {
         console.error(error);

@@ -75,11 +75,7 @@ export default function AlumnoDetalle() {
         >
           Asignar Videos
         </Link>
-        <Link
-          to={`/admin/alumno/${id}/eliminar`}
-          state={{ alumno }}
-          className="btn btn-red"
-        >
+        <Link state={{ alumno }} className="btn btn-red">
           Eliminar Alumno
         </Link>
       </div>
@@ -131,7 +127,7 @@ export default function AlumnoDetalle() {
               <p className="rutina-desc">{rutina.descripcion}</p>
               <ul className="rutina-list">
                 {rutina.ejercicios.map((ej) => (
-                  <li key={ej._id}>
+                  <li className="alumno-detalle-li" key={ej._id}>
                     <strong>{ej.ejercicio}</strong> – {ej.series} x{" "}
                     {ej.repeticiones} (Descanso: {ej.descanso})
                   </li>

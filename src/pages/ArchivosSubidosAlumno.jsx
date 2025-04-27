@@ -11,9 +11,12 @@ export default function ArchivosSubidosAlumno() {
   if (loading) return <Loader message="Actualizando Archivos..." />;
   if (error) return <p className="error">{error}</p>;
 
+  const archivos = user?.archivos || [];
+
   return (
     <div className="archivos-subidos-container">
       <h2>Archivos Subidos por el Alumno</h2>
+
       <button
         className="subir-archivo-alumno"
         onClick={() => setModalOpen(true)}
@@ -22,45 +25,43 @@ export default function ArchivosSubidosAlumno() {
         Nuevo Archivo
       </button>
 
-      {
-        user.archivos.length === 0 ? (
-          <p className="sin-archivos">
-            No tienes archivos subidos. ¡Sube uno nuevo!
-          </p>
-        ) : (
-          <table className="table-archivos-alumno">
-        <thead className="table-archivos-alumno-thead">
-          <tr>
-            <th>N°</th>
-            <th>Nombre del Archivo</th>
-            <th>Acción</th>
-          </tr>
-        </thead>
-        <tbody className="table-archivos-alumno-tbody">
-          {user?.archivos?.map((archivo, index) => (
-            <tr key={index} className="table-tr-archivos-alumno">
-              <td className="table-archivos-alumno-td">{index + 1}</td>
-              <td className="table-archivos-alumno-td">{archivo.nombre}</td>
-              <td className="table-archivos-alumno-td">
-                {archivo.url ? (
-                  <a
-                    href={archivo.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ver-archivo-link"
-                  >
-                    Ver Archivo
-                  </a>
-                ) : (
-                  <span>No disponible</span>
-                )}
-              </td>
+      {archivos.length === 0 ? (
+        <p className="sin-archivos">
+          No tienes archivos subidos. ¡Sube uno nuevo!
+        </p>
+      ) : (
+        <table className="table-archivos-alumno">
+          <thead className="table-archivos-alumno-thead">
+            <tr>
+              <th>N°</th>
+              <th>Nombre del Archivo</th>
+              <th>Acción</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-        )
-      }
+          </thead>
+          <tbody className="table-archivos-alumno-tbody">
+            {archivos.map(({ nombre, url }, index) => (
+              <tr key={index} className="table-tr-archivos-alumno">
+                <td>{index + 1}</td>
+                <td>{nombre}</td>
+                <td>
+                  {url ? (
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ver-archivo-link"
+                    >
+                      Ver Archivo
+                    </a>
+                  ) : (
+                    <span>No disponible</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
 
       {modalOpen && (
         <NewFileModal

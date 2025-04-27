@@ -38,6 +38,8 @@ const ArchivosPanel = () => {
       setModalVisible(false);
       setNombre("");
       setDescripcion("");
+      window.location.reload();
+
       setArchivoSeleccionado(null);
     }
   };

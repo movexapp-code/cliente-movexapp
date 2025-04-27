@@ -8,8 +8,8 @@ export default function VideosAsignados() {
   const { videos, loading, formatearFecha } = useVideosAsignados();
 
   if (loading) {
-      return <Loader message="Cargando Rutinas..." />;
-    }
+    return <Loader message="Cargando Rutinas..." />;
+  }
 
   if (!videos || videos.length === 0) {
     return (

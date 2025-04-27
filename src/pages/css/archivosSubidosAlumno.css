@@ -74,22 +74,25 @@
   background-color: #ffffff; /* Blanco */
   color: #000000; /* Negro */
   font-size: 1rem;
+  padding: 10px;
+  text-align: center;
 }
 
 .table-tr-archivos-alumno {
   border-bottom: 1px solid #dddddd;
   transition: background 0.3s ease;
   cursor: pointer;
+  margin-top: 5px;
 }
 
 .table-tr-archivos-alumno:hover {
-  background-color: #ff6600; /* Naranja en hover */
+  background-color: #ff660055; /* Naranja en hover */
   color: #000000;
 }
 
 .table-archivos-alumno-td {
-  padding: 12px;
   text-align: center;
+  padding: 20px;
 }
 
 /* Link para ver archivo */

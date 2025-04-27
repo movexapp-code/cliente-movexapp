@@ -1,7 +1,10 @@
 // src/hooks/useVideosAsignados.js
 import { useEffect, useState } from "react";
+import data from "../env";
 
 export const useVideosAsignados = () => {
+  const url = data.url;
+
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -20,7 +23,7 @@ export const useVideosAsignados = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `http://localhost:8082/usuario/${userId}/archivos/asignados`,
+          `${url}/usuario/${userId}/archivos/asignados`,
           {
             method: "GET",
             headers: {
@@ -40,7 +43,7 @@ export const useVideosAsignados = () => {
     };
 
     fetchVideos();
-  }, [userId]);
+  }, [userId, url]);
 
   const formatearFecha = (fecha) => {
     const date = new Date(fecha);

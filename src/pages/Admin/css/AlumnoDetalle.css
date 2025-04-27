@@ -82,6 +82,7 @@
 
 .btn {
   padding: 0.6rem 1.2rem;
+  margin-top: 25px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
@@ -91,7 +92,8 @@
 }
 
 .btn-outline {
-  border: 2px solid #ffa726;
+  margin-top: 25px;
+  border: 2px solid #ffa8265c;
   background-color: transparent;
   color: #ffa726;
   transition: all 0.3s ease;
@@ -113,7 +115,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 
 .rutina-card {
@@ -142,7 +144,7 @@
 
 .rutina-list li {
   margin-bottom: 0.5rem;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: 500;
   border-bottom: #ffa726 1px solid;
   padding-bottom: 0.5rem;

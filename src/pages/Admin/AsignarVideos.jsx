@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import { useAsignarVideos } from "../../hooks/UseAsignarVideos";
 import "./css/asignarVideos.css";
+import Loader from "../../components/Loader";
 
 const AsignarVideos = () => {
   const { showAlert } = useContext(AppContext);
@@ -20,7 +21,7 @@ const AsignarVideos = () => {
     subirArchivo,
   } = useAsignarVideos(id, showAlert);
 
-  if (loading) return <p className="cargando">Cargando...</p>;
+  if (loading) return <Loader message={"Cargando Archivos.."} />;
 
   return (
     <div className="asignar-container">

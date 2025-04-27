@@ -124,4 +124,16 @@ export class AlumnosAdminApi {
     const data = await response.json();
     return data;
   }
+
+  async getRutinasAlumno(id) {
+    const response = await fetch(
+      `${this.url}usuario/${id}/rutinas/asignadas`,
+      this.options("GET")
+    );
+    if (!response.ok) {
+      throw new Error("Error al cargar las rutinas del alumno");
+    }
+    const data = await response.json();
+    return data;
+  }
 }

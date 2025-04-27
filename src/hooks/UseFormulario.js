@@ -1,7 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import AlumnoAPi from "../api/AlumnoApi";
+import { AlumnosAdminApi } from "../api/Admin/Alumnos";
 
+const alumnoAdminApi = new AlumnosAdminApi();
 const alumnoController = new AlumnoAPi();
 const useFormulario = () => {
   const { showAlert, setPathActive } = useContext(AppContext);
@@ -17,47 +19,44 @@ const useFormulario = () => {
 
   useEffect(() => {
     setPathActive(window.location.pathname);
+
     const fetchData = async () => {
       setLoading(true);
       try {
-        const [formResponse, userResponse] = await Promise.all([
-          fetch("http://localhost:8082/formulario", {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `ad42fgte32gedrg4tvdf3HK6dsfHAS4`,
-            },
-          }).then((res) => res.json()),
+        // Llamadas usando el api correcto
+        const formResponse = await alumnoAdminApi.getFormularioPreguntas();
+        const userResponse = await alumnoAdminApi.verRespuestasFormulario(userId);
 
-          fetch(
-            `http://localhost:8082/usuario/${userId}/formulario/respuestas`,
-            {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: `ad42fgte32gedrg4tvdf3HK6dsfHAS4`,
-              },
-            }
-          ).then((res) => res.json()),
-        ]);
-
+        // Setear datos del formulario
         setFormData(formResponse);
-        setSections([...new Set(formResponse.preguntas.map((p) => p.seccion))]);
-        setRespuestas(
-          userResponse.map((r) => ({
-            preguntaId: r._id,
-            respuesta: r.respuesta || "",
-          }))
-        );
+
+        // Extraer secciones únicas
+        const seccionesUnicas = [
+          ...new Set(formResponse.preguntas.map((p) => p.seccion)),
+        ];
+        setSections(seccionesUnicas);
+
+        // Mapear respuestas del usuario
+        const respuestasFormateadas = userResponse.map((r) => ({
+          preguntaId: r._id,
+          respuesta: r.respuesta || "",
+        }));
+        setRespuestas(respuestasFormateadas);
       } catch (error) {
-        console.error("Error al obtener los datos:", error);
+        console.error(
+          "Error al obtener los datos del formulario o respuestas:",
+          error
+        );
+        showAlert("Hubo un error al cargar el formulario", 5000);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchData();
-  }, [userId, setPathActive]);
+    if (userId) {
+      fetchData();
+    }
+  }, [userId, setPathActive, showAlert]);
 
   useEffect(() => {
     localStorage.setItem("respuestas", JSON.stringify(respuestas));

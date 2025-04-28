@@ -5,14 +5,21 @@ import "./css/Login.css"; // Importa el archivo CSS
 import logo from "../assets/logocalistenia.png";
 import { FaWhatsapp } from "react-icons/fa";
 import { CiInstagram, CiYoutube } from "react-icons/ci";
+import Loader from "./Loader"; // Asegúrate de que el componente Loader esté en la ruta correcta
 
 const Login = () => {
-  const { login } = useContext(AppContext);
+  const { login, loading } = useContext(AppContext);
   const [user, setUser] = useState({});
 
   const onChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
+
+  if (loading) {
+    return (
+      <Loader message={"Ingresando..."} /> // Cambia el mensaje según sea necesario
+    );
+  }
 
   const handleSubmit = () => {
     login(user);
@@ -43,7 +50,7 @@ const Login = () => {
           />
         </div>
         <button onClick={() => handleSubmit()} className="btn-login">
-          INGRESAR
+          {loading ? "Cargando..." : "Iniciar Sesión"}
         </button>
         <p className="register-link">¿Quieres ser parte de Calistenia Team?</p>
         <div className="login-icons-social">

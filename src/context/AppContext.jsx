@@ -21,6 +21,7 @@ export const AppProvider = ({ children }) => {
   };
 
   const login = async (data) => {
+    setLoading(true); // Inicia la carga
     const userLogueado = await alumnoController.loginAlumno(
       data.email,
       data.password
@@ -33,6 +34,7 @@ export const AppProvider = ({ children }) => {
     } else {
       showAlert("¡Usuario o contraseña incorrectos!", 5000);
     }
+    setLoading(false); // Finaliza la carga
   };
 
   const logout = () => {

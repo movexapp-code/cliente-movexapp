@@ -76,7 +76,7 @@ export const useAsignarVideos = (alumnoId, showAlert) => {
       if (!file) return;
       setSubiendo(true);
       try {
-        await archivosApi.subirArchivo(file);
+        await archivosApi.subirArchivo(file, "archivo nuevo");
         await fetchArchivos();
       } catch (err) {
         console.error("Error al subir archivo", err);

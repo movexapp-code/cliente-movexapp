@@ -1,37 +1,148 @@
 .videos-container {
-  gap: 20px;
-  padding-top: 100px;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
   text-align: center;
-  font-family: "Oswald", sans-serif;
+  margin-top: 100px;
+}
+
+.btn-add {
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
 }
 
 .video-card {
-  background: #000000; /* Negro en lugar de gris oscuro */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.video-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 .video-thumbnail {
   width: 100%;
-  display: block;
-  border-radius: 12px 12px 0 0;
-  transition: opacity 0.3s ease-in-out;
+  border-radius: 6px;
 }
 
-.video-card:hover .video-thumbnail {
-  opacity: 0.8;
+.video-info {
+  margin-top: 8px;
+}
+
+.video-info h4 {
+  font-size: 16px;
+  margin: 4px 0;
+  color: #000;
+}
+
+.video-info p {
+  font-size: 12px;
+  color: #555;
+}
+
+.video-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.video-actions .btn-ver,
+.btn-editar,
+.btn-eliminar {
+  font-size: 12px;
+  padding: 4px 6px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-ver {
+  background-color: #007bff;
+}
+.btn-editar {
+  background-color: #ffc107;
+}
+.btn-eliminar {
+  background-color: #dc3545;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: left;
+}
+
+.video-form input,
+.video-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  background: #ccc;
+}
+
+
+
+@media screen and (max-width: 500px) {
+  .video-card {
+    width: 100%;
+  }
+
+  .modal {
+    width: 95%;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modal-buttons button {
+    width: 100%;
+  }
 }

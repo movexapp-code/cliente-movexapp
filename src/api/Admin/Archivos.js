@@ -67,8 +67,11 @@ export class archivosAdminApi {
     return data;
   }
 
-  async subirArchivo(file) {
+  async subirArchivo(file, nombre, descripcion) {
     const formData = new FormData();
+    // Agregar el archivo al FormData
+    formData.append("nombre", nombre);
+    formData.append("descripcion", descripcion);
     formData.append("file", file);
 
     const res = await fetch(`${this.url}archivos/subir`, {
@@ -81,6 +84,20 @@ export class archivosAdminApi {
 
     if (!res.ok) {
       throw new Error("Error al subir el archivo");
+    }
+    const data = await res.json();
+    return data;
+  }
+
+
+
+  async eliminarArchivo(id) {
+    const res = await fetch(
+      `${this.url}archivos/eliminar/${id}`,
+      this.options("DELETE")
+    );
+    if (!res.ok) {
+      throw new Error("Error al eliminar el archivo");
     }
     const data = await res.json();
     return data;

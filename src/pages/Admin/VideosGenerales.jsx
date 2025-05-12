@@ -16,7 +16,8 @@ const getIcono = (url) => {
 };
 
 const ArchivosPanel = () => {
-  const { archivos, loading, error, subirArchivo } = useArchivos();
+  const { archivos, loading, error, subirArchivo, eliminarArchivo } =
+    useArchivos();
   const [modalVisible, setModalVisible] = useState(false);
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -30,6 +31,17 @@ const ArchivosPanel = () => {
     return <Loader message="Actualizando Videos..." />;
   }
   if (error) return <div>Error: {error}</div>;
+
+  const handleEliminarArchivo = (id) => async () => {
+    if (window.confirm("¿Estás seguro de que deseas eliminar este archivo?")) {
+      try {
+        await eliminarArchivo(id);
+        window.location.reload();
+      } catch (error) {
+        console.error("Error al eliminar el archivo:", error);
+      }
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +58,7 @@ const ArchivosPanel = () => {
 
   return (
     <div className="container-videos-admin">
-      <h1 className="titulo-panel">Archivos Subidos</h1>
+      <h1 className="titulo-panel">Archivos Generales Subidos</h1>
       <button className="btn btn-crear" onClick={() => setModalVisible(true)}>
         <FiUploadCloud /> Subir nuevo archivo
       </button>
@@ -82,6 +94,9 @@ const ArchivosPanel = () => {
                   <a href={archivo.url} download className="btn btn-download">
                     Descargar
                   </a>
+                  <button onClick={handleEliminarArchivo(archivo._id)}>
+                    Eliminar
+                  </button>
                 </div>
               </td>
             </tr>

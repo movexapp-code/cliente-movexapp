@@ -36,3 +36,16 @@
 
 
 
+
+@media (max-width: 768px){
+  .back-button {
+    top: 15px;
+    left: 10px;
+    font-size: 25px;
+  }
+  .refresh-button {
+    top: 15px;
+    left: 70px;
+    font-size: 25px;
+  }
+}

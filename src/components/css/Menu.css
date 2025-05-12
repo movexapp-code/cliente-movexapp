@@ -55,3 +55,53 @@
 .menu-item:hover {
   color: #ffa528;
 }
+
+/* ------------------ RESPONSIVE ------------------ */
+@media screen and (max-width: 768px) {
+  .menu-container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+    background-color: #010409; /* fondo negro para el menú abierto */
+  }
+
+  .menu-logo {
+    display: none; /* Oculta el logo en mobile */
+  }
+
+  .menu-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: none;
+    background-color: #010409;
+  }
+
+  .menu-section.active {
+    display: flex;
+  }
+
+  .menu-item {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .menu-container.open {
+    background-color: #010409;
+  }
+}

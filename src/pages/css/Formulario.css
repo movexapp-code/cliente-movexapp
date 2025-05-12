@@ -165,3 +165,23 @@
 .formulario-boton {
   width: 48%;
 }
+
+@media (max-width: 768px) {
+  .formulario-container {
+    flex-direction: column;
+    margin-top: 90px;
+  }
+  .formulario-informacion,
+  .formulario {
+    width: 90%;
+    flex-direction: column;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-rutina-exercise-row {
+    grid-template-columns: 1fr; /* Un campo debajo del otro */
+    gap: 1rem;
+  }
+}

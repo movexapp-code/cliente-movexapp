@@ -12,6 +12,15 @@ export class RutinaApi {
     };
   }
 
+  async getListRutinasGenerales() {
+    const response = await fetch(
+      `${this.url}admin/rutinas/generales`,
+      this.options("GET")
+    );
+    const data = await response.json();
+    return data;
+  }
+
   async getRutinas(idCliente) {
     const response = await fetch(
       `${this.url}usuario/${idCliente}/rutinas/asignadas`
@@ -28,14 +37,37 @@ export class RutinaApi {
         return data;
     } */
 
+  async asignarRutinaTemporal(rutinasID, idAlumno) {
+    const response = await fetch(
+      `${this.url}admin/asignar/rutina/general/${idAlumno}`,
+      {
+        ...this.options("POST"),
+        body: JSON.stringify(rutinasID),
+      }
+    );
+    const data = await response.json();
+    return data;
+  }
+
+  async editarRutinaTemporal(id, rutina){
+    const response = await fetch(
+      `${this.url}admin/editar/rutina/general/${id}`,
+      {
+        ...this.options("PATCH"),
+        body: JSON.stringify(rutina),
+      }
+    );
+    const data = await response.json();
+    return data;
+  }
+
   async agregarEjercicioRutina(idAlumno, idRutina, ejercicioData) {
     const response = await fetch(
       `${this.url}admin/alumnos/${idAlumno}/rutina/${idRutina}/agregar-ejercicio`,
-        {
-            ...this.options("POST"),
-            body: JSON.stringify(ejercicioData),
-        }
-
+      {
+        ...this.options("POST"),
+        body: JSON.stringify(ejercicioData),
+      }
     );
     const data = await response.json();
     return data;
@@ -49,6 +81,39 @@ export class RutinaApi {
         body: JSON.stringify(rutinaData),
       }
     );
+    const data = await response.json();
+    return data;
+  }
+
+  async actualizarRutina(id, idRutina, rutinaData) {
+    const response = await fetch(
+      `${this.url}admin/alumnos/${id}/rutina/${idRutina}/actualizar`,
+      {
+        ...this.options("PATCH"),
+        body: JSON.stringify(rutinaData),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Error al actualizar la rutina");
+    }
+
+    const data = await response.json();
+    return data;
+  }
+
+  async eliminarRutina(id, idRutina) {
+    const response = await fetch(
+      `${this.url}admin/${id}/rutina/eliminar/${idRutina}`,
+      {
+        ...this.options("DELETE"),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Error al eliminar la rutina");
+    }
+
     const data = await response.json();
     return data;
   }

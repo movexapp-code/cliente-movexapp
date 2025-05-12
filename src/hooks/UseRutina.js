@@ -27,7 +27,7 @@ export const useRutinas = () => {
     const fetchData = async () => {
       try {
         setLoading(true); // Inicia el loading
-        const data = await alumnoAdminApi.getRutinasAlumno(userId);
+        const data = await alumnoAdminApi.getRutinasAlumnosMixto(userId);
         console.log(data);
 
         setRutinas(data);
@@ -41,5 +41,22 @@ export const useRutinas = () => {
     fetchData();
   }, [userId, setPathActive]);
 
-  return { rutinas, loading };
+  const convertToPDF = async (id, idRutina, modelo) => {
+    try {
+      const blob = await alumnoAdminApi.convertirAPDF(id, idRutina, modelo);
+
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", `Rutina_${modelo}_${id}.pdf`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url); // liberar memoria
+    } catch (error) {
+      console.error("Error al convertir a PDF:", error);
+    }
+  };
+
+  return { rutinas, loading, convertToPDF, idAlumno: userId };
 };

@@ -15,17 +15,30 @@ const Formulario = React.lazy(() => import("./pages/Formulario"));
 const VideosAsignados = React.lazy(() => import("./pages/VideosAsignados"));
 const Dashboard = React.lazy(() => import("./pages/Admin/Dashboard"));
 const AlumnoDetalle = React.lazy(() => import("./pages/Admin/AlumnoDetalle"));
-const AlumnoModificar = React.lazy(() => import("./pages/Admin/AlumnoModificar"));
+const AlumnoModificar = React.lazy(() =>
+  import("./pages/Admin/AlumnoModificar")
+);
 const AlumnoRutinas = React.lazy(() => import("./pages/Admin/AlumnoRutinas"));
-const AlumnoRutinaVer = React.lazy(() => import("./pages/Admin/AlumnoRutinaVer"));
-const AgregarRutinaNueva = React.lazy(() => import("./pages/Admin/AgregarRutinaNueva"));
-const RespuestasFormulario = React.lazy(() => import("./pages/Admin/RespuestasFormulario"));
-const FormularioPreguntas = React.lazy(() => import("./pages/Admin/FormularioPreguntas"));
+const AlumnoRutinaVer = React.lazy(() =>
+  import("./pages/Admin/AlumnoRutinaVer")
+);
+const AgregarRutinaNueva = React.lazy(() =>
+  import("./pages/Admin/AgregarRutinaNueva")
+);
+const RespuestasFormulario = React.lazy(() =>
+  import("./pages/Admin/RespuestasFormulario")
+);
+const FormularioPreguntas = React.lazy(() =>
+  import("./pages/Admin/FormularioPreguntas")
+);
 const AsignarVideos = React.lazy(() => import("./pages/Admin/AsignarVideos"));
-const ArchivosSubidosAlumno = React.lazy(() => import("./pages/ArchivosSubidosAlumno"));
+const ArchivosSubidosAlumno = React.lazy(() =>
+  import("./pages/ArchivosSubidosAlumno")
+);
 const CrearAlumno = React.lazy(() => import("./pages/Admin/CrearAlumno.jsx"));
-const RutinasGenerales = React.lazy(() => import("./pages/Admin/RutinasGenerales.jsx"));
-
+const RutinasGenerales = React.lazy(() =>
+  import("./pages/Admin/RutinasGenerales.jsx")
+);
 
 const router = createBrowserRouter([
   {
@@ -93,7 +106,9 @@ const router = createBrowserRouter([
       {
         path: "admin/dashboard",
         element: (
-          <ProtectedRoute allowedRoles={["administrador", "alumno"]}>
+          <ProtectedRoute
+            allowedRoles={["administrador", "alumno", "subadministrador"]}
+          >
             <Suspense fallback={<Loader />}>
               <Dashboard />
             </Suspense>
@@ -103,7 +118,9 @@ const router = createBrowserRouter([
       {
         path: "admin/alumno/:id",
         element: (
-          <ProtectedRoute allowedRoles={["alumno", "administrador"]}>
+          <ProtectedRoute
+            allowedRoles={["alumno", "administrador", "subadministrador"]}
+          >
             <Suspense fallback={<Loader />}>
               <AlumnoDetalle />
             </Suspense>
@@ -123,7 +140,9 @@ const router = createBrowserRouter([
       {
         path: "admin/alumno/:id/rutina",
         element: (
-          <ProtectedRoute allowedRoles={["alumno", "administrador"]}>
+          <ProtectedRoute
+            allowedRoles={["alumno", "administrador", "subadministrador"]}
+          >
             <Suspense fallback={<Loader />}>
               <AlumnoRutinas />
             </Suspense>
@@ -133,7 +152,9 @@ const router = createBrowserRouter([
       {
         path: "admin/alumno/:id/rutina/ver",
         element: (
-          <ProtectedRoute allowedRoles={["alumno", "administrador"]}>
+          <ProtectedRoute
+            allowedRoles={["alumno", "administrador", "subadministrador"]}
+          >
             <Suspense fallback={<Loader />}>
               <AlumnoRutinaVer />
             </Suspense>
@@ -143,7 +164,9 @@ const router = createBrowserRouter([
       {
         path: "admin/alumno/:id/rutina/agregar-rutina",
         element: (
-          <ProtectedRoute allowedRoles={["alumno", "administrador"]}>
+          <ProtectedRoute
+            allowedRoles={["alumno", "administrador", "subadministrador"]}
+          >
             <Suspense fallback={<Loader />}>
               <AgregarRutinaNueva />
             </Suspense>
@@ -185,7 +208,7 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute allowedRoles={["alumno", "administrador"]}>
             <Suspense fallback={<Loader />}>
-              <VideosGenerales/>
+              <VideosGenerales />
             </Suspense>
           </ProtectedRoute>
         ),
@@ -193,9 +216,11 @@ const router = createBrowserRouter([
       {
         path: "admin/crear-alumno",
         element: (
-          <ProtectedRoute allowedRoles={["alumno", "administrador"]}>
+          <ProtectedRoute
+            allowedRoles={["alumno", "administrador", "subadministrador"]}
+          >
             <Suspense fallback={<Loader />}>
-              <CrearAlumno/>
+              <CrearAlumno />
             </Suspense>
           </ProtectedRoute>
         ),
@@ -203,9 +228,35 @@ const router = createBrowserRouter([
       {
         path: "admin/rutinas-generales",
         element: (
-          <ProtectedRoute allowedRoles={["alumno", "administrador"]}>
+          <ProtectedRoute
+            allowedRoles={["alumno", "administrador", "subadministrador"]}
+          >
             <Suspense fallback={<Loader />}>
-              <RutinasGenerales/>
+              <RutinasGenerales />
+            </Suspense>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "rutinas-generales",
+        element: (
+          <ProtectedRoute
+            allowedRoles={["alumno", "administrador", "subadministrador"]}
+          >
+            <Suspense fallback={<Loader />}>
+              <RutinasGenerales />
+            </Suspense>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "admin/videos-generales",
+        element: (
+          <ProtectedRoute
+            allowedRoles={["alumno", "administrador", "subadministrador"]}
+          >
+            <Suspense fallback={<Loader />}>
+              <Videos />
             </Suspense>
           </ProtectedRoute>
         ),
@@ -213,7 +264,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
 
 const App = () => {
   return (

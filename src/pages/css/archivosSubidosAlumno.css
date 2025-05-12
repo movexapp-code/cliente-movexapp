@@ -219,3 +219,32 @@
   color: #ff0000;
   margin-bottom: 10px;
 }
+@media (max-width: 768px) {
+  .archivos-subidos-container {
+    margin-top: 170px;
+  }
+
+  .formulario-container,
+  .archivos-subidos-container {
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 70px;
+  }
+
+  .formulario-informacion,
+  .formulario {
+    width: 100%;
+  }
+
+  .table-archivos-alumno {
+    font-size: 0.9rem;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}
+
+.archivos-subidos-container {
+  background: linear-gradient(to bottom, #1a1a1a, #333333);
+}

@@ -6,18 +6,26 @@ import "./css/CrearRutinaModal.css";
 
 const adminApi = new AdminApi();
 
-export default function CrearRutinaModal({ isOpen, onClose, onSuccess, id }) {
+export default function CrearRutinaModal({ isOpen, onClose, onSuccess }) {
   const { showAlert } = useContext(AppContext);
   const [nombre, setNombre] = useState("");
+  const [descripcion, setDescripcion] = useState("");
   const [ejercicios, setEjercicios] = useState([]);
   const [loading, setLoading] = useState(false);
+  
 
-  // Inicializar un ejercicio vacío al abrir
   useEffect(() => {
     if (isOpen) {
       setNombre("");
+      setDescripcion("");
       setEjercicios([
-        { ejercicio: "", series: "", repeticiones: "", descanso: "" },
+        {
+          ejercicio: "",
+          series: "",
+          repeticiones: "",
+          descanso: "",
+          descripcion: "",
+        },
       ]);
     }
   }, [isOpen]);
@@ -31,7 +39,13 @@ export default function CrearRutinaModal({ isOpen, onClose, onSuccess, id }) {
   const addExercise = () => {
     setEjercicios((prev) => [
       ...prev,
-      { ejercicio: "", series: "", repeticiones: "", descanso: "" },
+      {
+        ejercicio: "",
+        series: "",
+        repeticiones: "",
+        descanso: "",
+        descripcion: "",
+      },
     ]);
   };
 
@@ -42,9 +56,9 @@ export default function CrearRutinaModal({ isOpen, onClose, onSuccess, id }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const payload = { nombre, rutina: ejercicios };
+    const payload = { nombre, descripcion, ejercicios };
     try {
-      const resp = await adminApi.crearRutinaGeneral(id, payload);
+      const resp = await adminApi.crearRutinaGeneral(payload);
       if (resp.ok) {
         showAlert("Rutina creada correctamente", 5000);
         onSuccess();
@@ -79,6 +93,16 @@ export default function CrearRutinaModal({ isOpen, onClose, onSuccess, id }) {
                 onChange={(e) => setNombre(e.target.value)}
                 placeholder="Ej: Rutina Intermedios"
                 required
+              />
+            </label>
+
+            <label className="modal-rutina-label">
+              Descripción de la Rutina
+              <textarea
+                className="modal-rutina-input"
+                value={descripcion}
+                onChange={(e) => setDescripcion(e.target.value)}
+                placeholder="Ej: Rutina para ganar fuerza y resistencia"
               />
             </label>
 

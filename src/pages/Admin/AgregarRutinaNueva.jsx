@@ -123,13 +123,14 @@ export default function AgregarRutinaNueva() {
             {videosDisponibles.map((video, idx) => (
               <option key={idx} value={video.url}>
                 {video.nombre}
+                {video.descripcion && ` - ${video.descripcion}`}
               </option>
             ))}
           </select>
 
           {ej.url && (
             <video controls width="100%" className="video-preview">
-              <source src={ej.url} type="video/mp4" />
+              <source src={ej.url} />
               Tu navegador no soporta el video.
             </video>
           )}

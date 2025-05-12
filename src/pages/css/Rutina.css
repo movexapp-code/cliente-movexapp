@@ -1,197 +1,148 @@
-/* Estilos generales */
 .rutinas-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  gap: 20px;
   padding: 20px;
-  padding-top: 50px; /* Reducido de 100px a 50px */
-  justify-content: center;
-  margin-top: 50px; /* Espacio superior */
-}
-
-/* Tarjeta de Rutina */
-.rutina-card-alumno {
-  background: #1e1e2e;
-  color: #fff;
-  border-radius: 12px;
-  padding: 15px; /* Reducido de 20px a 15px */
-  margin-bottom: 10px;
-  width: 90%;
-  margin: auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.rutina-card-alumno:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  max-width: 1000px;
+  margin: 100px auto 0 auto;
 }
 
 .rutinas-title {
-  font-size: 1.5rem;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
   text-align: center;
-  font-weight: bold;
-  margin-bottom: 10px;
+  color: #ffffff !important;
 }
 
-/* Títulos internos */
-.rutina-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 6px; /* Reducido de 8px */
+.subtitulo-tipo {
+  font-size: 22px;
+  margin: 40px 0 15px 0;
+  padding-left: 10px;
+  border-left: 5px solid #888;
 }
 
-.rutina-description {
-  font-size: 1rem;
-  opacity: 0.8;
-  margin-bottom: 8px; /* Reducido para compactar */
-}
-
-/* Tips */
-.rutina-tips {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px; /* Reducido gap */
-  background: #2b2b40;
-  padding: 5px; /* Reducido padding */
+.rutina-card-alumno {
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
   border-radius: 8px;
-  font-size: 0.9rem;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rutina-general .rutina-card-alumno,
+.rutina-general {
+  border-color: #4caf50 !important;
+}
+
+.rutina-temporal .rutina-card-alumno,
+.rutina-temporal {
+  border-color: #f57c00 !important;
+}
+
+.rutina-tips {
+  margin: 10px 0 15px 0;
 }
 
 .tip-item {
   display: flex;
-  gap: 8px; /* Gap reducido */
+  align-items: center;
+  margin-bottom: 5px;
 }
 
 .tip-icon {
-  color: #ffcc00;
-  font-size: 1.2rem;
+  margin-right: 8px;
+  color: #ffc107;
+  transition: transform 0.2s;
 }
 
-.tip-text {
-  margin: 0;
+.tip-item:hover .tip-icon {
+  transform: scale(1.2);
 }
 
-/* Ejercicios */
 .ejercicios-container {
-  margin-top: 10px; /* Menor espacio superior */
+  margin-top: 15px;
 }
 
 .ejercicio-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  gap: 10px; /* Reducido de 22px */
-  background: #25253a;
-  padding: 5px; /* Reducido de 10px */
-  margin-bottom: 5px; /* Reducido */
-  border-radius: 8px;
-  transition: background 0.3s ease-in-out;
-}
-
-.ejercicio-card:hover {
-  background: #30304a;
-}
-
-.ejercicio-icon {
-  font-size: 1.5rem; /* Ligeramente menor */
-  color: #00bcd4;
+  align-items: center;
 }
 
 .ejercicio-title {
-  font-size: 1rem;
   margin: 0;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
 }
 
-.ejercicio-info {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  margin: 0;
-}
-
-.ejercicio-descanso {
-  font-size: 0.8rem;
-  opacity: 0.7;
-}
-
-/* Iconos pequeños */
 .icon-small {
-  font-size: 0.9rem; /* Reducido */
-  margin-right: 3px; /* Reducido */
-  position: relative;
-  top: 2px; /* Ajustado */
-  color: #ff9800;
-}
-
-/* Botones de acciones */
-.rutinas-buttons-action {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.button-action-comentario,
-.button-action-cambio {
-  margin-top: 10px; /* Reducido de 20px */
-  margin-bottom: 10px;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-  padding: 10px 16px; /* Reducido padding */
-  font-size: 0.9rem; /* Reducido tamaño de fuente */
-}
-
-.button-action-comentario {
-  background-color: #ff660053;
-}
-
-.button-action-cambio {
-  background-color: #3981eeb4;
-}
-
-/* Botón para video */
-.ejercicio-icon-video {
-  font-size: 1.5rem; /* Reducido */
-  color: #ffffff;
+  margin-right: 5px;
+  color: #007bff;
 }
 
 .ejercicio-video-button {
-  background-color: #ff26007d;
-  margin-top: 10px;
-  margin-bottom: 10px;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 5px; /* Reducido */
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-  padding: 5px; /* Reducido */
+  align-items: center;
+  gap: 5px;
+  background: #007bff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
 }
 
-.ejercicios-ver-video {
-  width: 10%;
-  height: auto; /* Se ajusta a contenido en lugar de 100% */
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 5px; /* Reducido gap */
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-  padding: 5px; /* Reducido padding */
+.ejercicio-video-button:hover {
+  background: #0056b3;
+}
+
+.ejercicio-icon-video {
+  font-size: 20px;
+}
+
+/* ============== Dark Mode ============== */
+@media (prefers-color-scheme: dark) {
+  .rutina-card-alumno {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    border-color: #444;
+  }
+
+  .ejercicio-card {
+    background-color: #2a2a2a;
+    color: #ddd;
+    border-color: #444;
+  }
+
+  .ejercicio-video-button {
+    background: #2196f3;
+  }
+
+  .tip-text {
+    color: #ddd;
+  }
+}
+
+/* ============== Responsive ============== */
+@media screen and (max-width: 600px) {
+  .rutina-title,
+  .subtitulo-tipo {
+    font-size: 18px;
+  }
+
+  .ejercicio-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ejercicio-video-button {
+    align-self: flex-end;
+  }
 }

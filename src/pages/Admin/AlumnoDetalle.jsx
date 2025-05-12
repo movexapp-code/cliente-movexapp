@@ -1,33 +1,56 @@
 // src/pages/admin/AlumnoDetalle.jsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import { AlumnosAdminApi } from "../../api/Admin/Alumnos";
 import "./css/AlumnoDetalle.css"; // Importa el archivo CSS
 import MetricasAlumno from "../../components/MetricasAlumno";
 import Loader from "../../components/Loader";
+import { RutinaApi } from "../../api/Admin/Rutina";
+import { AppContext } from "../../context/AppContext";
+import RutinasModal from "./RutinaTemporalModal";
 
+const rutinaApi = new RutinaApi();
 const alumnosApi = new AlumnosAdminApi();
 
 export default function AlumnoDetalle() {
+  const { showAlert } = useContext(AppContext);
   const { id } = useParams();
-  console.log("perfil");
   // const navigate = useNavigate();
   const [alumno, setAlumno] = useState(null);
+  const [openRutinasTemporales, setOpenRutinasTemporales] = useState(false);
+  const [loading, setLoading] = useState(true); // Estado de carga
+  const [rutinaList, setRutinaList] = useState([]);
 
   useEffect(() => {
-    const fetchAlumno = async () => {
+    let isMounted = true; // para evitar actualizar el estado si el componente se desmonta
+
+    const fetchData = async () => {
+      setLoading(true); // Inicia la carga
       try {
-        const data = await alumnosApi.getAlumno(id);
-        setAlumno(data);
+        const [alumnoData, rutinasData] = await Promise.all([
+          alumnosApi.getAlumno(id),
+          rutinaApi.getListRutinasGenerales(),
+        ]);
+        console.log("Alumno data:", rutinasData);
+
+        if (isMounted) {
+          setAlumno(alumnoData);
+          setRutinaList(rutinasData.rutinas);
+          setLoading(false); // Finaliza la carga
+        }
       } catch (error) {
-        console.error("Error al obtener alumno:", error);
+        console.error("Error al obtener datos:", error);
       }
     };
 
-    fetchAlumno();
+    fetchData();
+
+    return () => {
+      isMounted = false;
+    };
   }, [id]);
 
-  if (!alumno) {
+  if (!alumno && loading) {
     return <Loader message={"Cargando alumno..."} />;
   }
   return (
@@ -47,6 +70,13 @@ export default function AlumnoDetalle() {
         </div>
       </header>
       <div className="alumno-panel__actions">
+        <button
+          onClick={() => setOpenRutinasTemporales(true)}
+          className="btn btn-orange"
+        >
+          Agregar Rutina Temporal
+        </button>
+
         <Link
           to={`/admin/alumno/${id}/rutina`}
           state={{ alumno }}
@@ -79,6 +109,14 @@ export default function AlumnoDetalle() {
           Eliminar Alumno
         </Link>
       </div>
+      {openRutinasTemporales && (
+        <RutinasModal
+          rutinaList={rutinaList}
+          setOpenRutinasTemporales={setOpenRutinasTemporales}
+          alumno={alumno}
+          showAlert={showAlert}
+        />
+      )}
 
       <section className="alumno-panel__section">
         <h2 className="alumno-panel__subtitle">Archivos del Alumno</h2>

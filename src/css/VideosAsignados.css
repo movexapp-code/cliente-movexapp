@@ -1,4 +1,172 @@
-/* src/css/VideosAsignados.css */
+/* Combinado: Rutinas y Videos Asignados */
+
+/* Rutinas */
+.rutinas-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 100px auto 0;
+}
+
+.rutinas-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.subtitulo-tipo {
+  font-size: 22px;
+  margin: 40px 0 15px;
+  padding-left: 10px;
+  border-left: 5px solid #888;
+}
+
+.rutina-card-alumno {
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rutina-general .rutina-card-alumno {
+  border-color: #4caf50;
+}
+
+.rutina-temporal .rutina-card-alumno {
+  border-color: #f57c00;
+}
+
+.rutina-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.rutina-description {
+  margin-bottom: 10px;
+  font-style: italic;
+  color: #555;
+}
+
+.rutina-tips {
+  margin: 10px 0 15px;
+}
+
+.tip-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.tip-icon {
+  margin-right: 8px;
+  color: #ffc107;
+  transition: transform 0.2s;
+}
+
+.tip-item:hover .tip-icon {
+  transform: scale(1.2);
+}
+
+.tip-text {
+  font-size: 14px;
+  color: #333;
+}
+
+.ejercicios-container {
+  margin-top: 15px;
+}
+
+.ejercicio-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ejercicio-title {
+  margin: 0;
+  font-weight: 500;
+  color: #000;
+}
+
+.ejercicio-descanso {
+  font-size: 14px;
+  color: #666;
+}
+
+.icon-small {
+  margin-right: 5px;
+  color: #007bff;
+}
+
+.ejercicio-video-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #007bff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.ejercicio-video-button:hover {
+  background: #0056b3;
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  .rutina-card-alumno {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    border-color: #444;
+  }
+
+  .ejercicio-card {
+    background-color: #2a2a2a;
+    color: #ddd;
+    border-color: #444;
+  }
+
+  .ejercicio-video-button {
+    background: #2196f3;
+  }
+
+  .tip-text {
+    color: #ddd;
+  }
+}
+
+/* Responsivo */
+@media screen and (max-width: 600px) {
+  .rutina-title,
+  .subtitulo-tipo {
+    font-size: 18px;
+  }
+
+  .ejercicio-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ejercicio-video-button {
+    align-self: flex-end;
+  }
+}
+
+/* Videos Asignados */
 .videos-container-v {
   width: 100%;
   font-family: "Oswald", sans-serif;
@@ -7,25 +175,26 @@
   border-radius: 10px;
 }
 
-.videos-title-v {
-  text-align: center;
-  color: #ffffff;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
+.videos-title-v,
 .videos-subtitle-v {
   text-align: center;
   color: #ffffff;
-  font-size: 18px;
   margin-bottom: 20px;
+}
+
+.videos-title-v {
+  font-size: 28px;
+}
+
+.videos-subtitle-v {
+  font-size: 18px;
 }
 
 .videos-loading,
 .videos-no {
   text-align: center;
   font-size: 18px;
-  color: #ffffff; /* Cambiado de #666 a blanco */
+  color: #ffffff;
   margin: 20px 0;
 }
 
@@ -67,14 +236,14 @@
 
 .video-description {
   font-size: 14px;
-  color: #ffffff; /* Cambiado de #666 a blanco */
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 .video-link {
   display: inline-block;
   padding: 8px 12px;
-  background: #ff6600; /* Naranja */
+  background: #ff6600;
   color: #ffffff;
   width: 90%;
   text-align: center;
@@ -84,12 +253,11 @@
 }
 
 .video-link:hover {
-  background: #000000; /* Se cambia a negro en hover */
+  background: #000000;
   color: #ffffff;
 }
 
 .videos-no {
   margin-top: 150px;
   font-size: 15px;
-  color: #ffffff;
 }

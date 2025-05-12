@@ -1,6 +1,9 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import React from "react";
 import "./css/AlumnoRutina.css"; // Asegúrate de tener este archivo CSS
+import { RutinaApi } from "../../api/Admin/Rutina";
+
+const rutinaApi = new RutinaApi();
 
 export default function AlumnoRutinas() {
   const location = useLocation();
@@ -10,15 +13,29 @@ export default function AlumnoRutinas() {
   const rutinas = alumno?.rutina || [];
 
   const handleEditar = (rutina) => {
-    navigate("ver", { state: { rutina, alumnoId: alumno._id, modo: "editar" } });
+    navigate("ver", {
+      state: { rutina, alumnoId: alumno._id, modo: "editar", rutinas },
+    });
   };
 
   const handleVer = (rutina) => {
-    navigate("ver", { state: { rutina } });
+    navigate("ver", { state: { rutina, rutinas } });
   };
 
   const handleAgregar = () => {
     navigate("agregar-rutina", { state: { alumnoId: alumno._id } });
+  };
+
+  const handleEliminar = async (rutina) => {
+    if (window.confirm("¿Estás seguro de que deseas eliminar esta rutina?")) {
+      const res = await rutinaApi.eliminarRutina(alumno._id, rutina._id);
+      if (res) {
+        alert("Rutina eliminada con éxito");
+        navigate(-1);
+      } else {
+        alert("Error al eliminar la rutina");
+      }
+    }
   };
 
   return (
@@ -32,11 +49,11 @@ export default function AlumnoRutinas() {
       <div className="rutina-lista">
         {rutinas.length > 0 ? (
           rutinas.map((rutina) => (
-            <div className="rutina-card" key={rutina._id}>
+            <div className="rutina-card-rutina" key={rutina._id}>
               <div className="rutina-header">
-                <h3 className="rutina-nombre">{rutina.nombre}</h3>
-                <p className="rutina-nombre-p">{rutina.descripcion}</p>
-                <p className="fecha">
+                <h3 className="rutina-nombre-rutina">{rutina.nombre}</h3>
+                <p className="rutina-nombre-p-rutina">{rutina.descripcion}</p>
+                <p className="rutina-fecha">
                   Fecha: {new Date(rutina.fecha).toLocaleDateString()}
                 </p>
               </div>
@@ -61,7 +78,7 @@ export default function AlumnoRutinas() {
                   Editar
                 </button>
                 <button
-                  onClick={() => handleEditar(rutina)}
+                  onClick={() => handleEliminar(rutina)}
                   className="btn-eliminar"
                 >
                   Eliminar

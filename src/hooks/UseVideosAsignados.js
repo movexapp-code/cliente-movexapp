@@ -23,7 +23,7 @@ export const useVideosAsignados = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `${url}/usuario/${userId}/archivos/asignados`,
+          `${url}usuario/${userId}/archivos/asignados`,
           {
             method: "GET",
             headers: {

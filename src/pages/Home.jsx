@@ -17,88 +17,23 @@ const Home = () => {
             radical!
           </p>
           <p className="presentation-description">
-            En Movex, no te vendemos cuentos. Te ofrecemos las herramientas para
-            transformar tu cuerpo, tu mente y tu vida, de la mano de nuestro
-            equipo de expertos.
+            No te ofrecemos soluciones mágicas, sino un sistema probado para
+            transformar tu cuerpo y tu mente. Nuestro equipo de expertos te
+            guiará en cada paso, desde la creación de una rutina personalizada
+            hasta el acceso a una comunidad que te apoya en tu camino.
           </p>
         </div>
 
         {/* Bloque de Características */}
         <div className="features-block">
-          <h2 className="features-title">¿Qué te espera en Movex?</h2>
-
-          <div className="feature-category">
-            <h3 className="feature-category-title">
-              Retos que desafían tus límites
-            </h3>
-            <p className="feature-item">
-              <strong>90 Días Quema Grasa:</strong> Despídete de lo que te sobra
-              y da la bienvenida a tu mejor versión.
-            </p>
-            <p className="feature-item">
-              <strong>Reconcilia tu Cuerpo en 90 Días:</strong> Fuerza,
-              movilidad y control total, sin excusas ni materiales.
-            </p>
-          </div>
-
-          <div className="feature-category">
-            <h3 className="feature-category-title">
-              Programas para todos los niveles
-            </h3>
-            <p className="feature-item">
-              <strong>Membresía Movex:</strong> Acceso ilimitado a rutinas
-              generales, videos técnicos y recursos para dominar la calistenia,
-              el streetlifting y los pesos libres.
-            </p>
-          </div>
-
-          <div className="feature-category">
-            <h3 className="feature-category-title">
-              Personalización que marca la diferencia
-            </h3>
-            <p className="feature-item">
-              <strong>Rutinas Personalizadas:</strong> Diseñadas a tu medida con
-              un exhaustivo cuestionario de 38 preguntas.
-            </p>
-            <p className="feature-item">
-              <strong>Plan Premium:</strong> Combina nutrición con seguimiento
-              profesional. ¡Resultados garantizados!
-            </p>
-            <p className="feature-item">
-              <strong>Autocontrol de macros:</strong> Aprende a manejar tu
-              alimentación.
-            </p>
-          </div>
-
-          <div className="feature-category">
-            <h3 className="feature-category-title">
-              Potencia tu negocio online
-            </h3>
-            <p className="feature-item">Te ayudamos a crecer en 3 meses.</p>
-          </div>
-
-          <div className="feature-category">
-            <h3 className="feature-category-title">
-              Movex es tu trampolín al éxito
-            </h3>
-            <p className="feature-item">
-              <strong>Resultados reales:</strong> No te conformes con menos.
-            </p>
-            <p className="feature-item">
-              <strong>Compromiso total:</strong> Nuestro equipo te guía en cada
-              paso del camino.
-            </p>
-            <p className="feature-item">
-              <strong>Garantía de satisfacción:</strong> Si no ves resultados,
-              te devolvemos tu dinero.
-            </p>
-          </div>
+          <h2 className="features-title">¿Listo para comenzar?</h2>
         </div>
 
         {/* Bloque de Llamada a la Acción */}
         <div className="call-to-action">
           <p className="final-message">
-            No te quedes con lo que ya eres. Destapa tu potencial ilimitado.
+            Responde unas breves preguntas y descubre cómo Movex puede ayudarte
+            a alcanzar tus metas.
           </p>
           <Link to="/formulario" className="presentation-button">
             ¡Únete hoy!

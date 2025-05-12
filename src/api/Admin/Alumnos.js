@@ -136,4 +136,28 @@ export class AlumnosAdminApi {
     const data = await response.json();
     return data;
   }
+
+  async getRutinasAlumnosMixto(id) {
+    const response = await fetch(
+      `${this.url}usuario/${id}/rutinas/mixtas`,
+      this.options("GET")
+    );
+    if (!response.ok) {
+      throw new Error("Error al cargar las rutinas del alumno");
+    }
+    const data = await response.json();
+    return data;
+  }
+
+  async convertirAPDF(id, idRutina, modelo) {
+    const response = await fetch(
+      `${this.url}admin/alumnos/${id}/rutina/${idRutina}/generar-pdf?modelo=${modelo}`,
+      this.options("POST")
+    );
+    if (!response.ok) {
+      throw new Error("Error al convertir a PDF");
+    }
+    const data = await response.blob();
+    return data;
+  }
 }

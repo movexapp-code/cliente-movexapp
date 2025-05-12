@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 // src/hooks/useArchivos.js
 import { useEffect, useState, useContext } from "react";
 import { archivosAdminApi } from "../api/Admin/Archivos";
@@ -8,15 +7,29 @@ const archivosApi = new archivosAdminApi();
 
 const useArchivos = () => {
   const { showAlert } = useContext(AppContext);
-  const id = JSON.parse(localStorage.getItem("userMovex"))._id;
+
   const [archivos, setArchivos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const eliminarArchivo = async (id) => {
+    try {
+      const response = await archivosApi.eliminarArchivo(id);
+      if (response.ok) {
+        setArchivos((prev) => prev.filter((archivo) => archivo._id !== id));
+        showAlert("Archivo eliminado correctamente", 5000);
+      } else {
+        console.error("Error al eliminar el archivo");
+      }
+    } catch (err) {
+      console.error("Error al eliminar el archivo", err);
+    }
+  };
+
   const obtenerArchivos = async () => {
     try {
       setLoading(true);
-      const response = await archivosApi.getArchivosAdmin(id);
+      const response = await archivosApi.getArchivos();
       setArchivos(response);
     } catch (err) {
       console.error("Error al obtener archivos", err);
@@ -32,13 +45,13 @@ const useArchivos = () => {
       return;
     }
     setLoading(true);
-    const formData = new FormData();
-    formData.append("archivo", file);
-    formData.append("nombre", nombre);
-    formData.append("descripcion", descripcion);
 
     try {
-      const nuevoArchivo = await archivosApi.subirArchivoNuevo(formData, id);
+      const nuevoArchivo = await archivosApi.subirArchivo(
+        file,
+        nombre,
+        descripcion
+      );
       setArchivos((prev) => [...prev, nuevoArchivo]);
       if (nuevoArchivo.ok == true) {
         showAlert("Archivo subido correctamente", 5000);
@@ -53,7 +66,7 @@ const useArchivos = () => {
     obtenerArchivos();
   }, []);
 
-  return { archivos, loading, error, subirArchivo };
+  return { archivos, loading, error, subirArchivo, eliminarArchivo };
 };
 
 export default useArchivos;

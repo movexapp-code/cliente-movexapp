@@ -1,12 +1,16 @@
-import React, { useState, useContext } from "react";
-import { useLocation } from "react-router-dom";
-import "./css/AlumnoRutinaVer.css"; // Asegúrate de tener este archivo CSS
+import React, { useState, useContext, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import "./css/AlumnoRutinaVer.css";
 import { RutinaApi } from "../../api/Admin/Rutina";
 import { AppContext } from "../../context/AppContext";
 import Loader from "../../components/Loader";
+import { archivosAdminApi } from "../../api/Admin/Archivos";
 
 const rutinaApi = new RutinaApi();
+const archivosApi = new archivosAdminApi();
+
 export default function AlumnoRutinaVer() {
+  const navigate = useNavigate();
   const { showAlert } = useContext(AppContext);
   const location = useLocation();
   const { rutina, modo, alumnoId } = location.state;
@@ -22,13 +26,27 @@ export default function AlumnoRutinaVer() {
     series: "",
     repeticiones: "",
     descanso: "",
+    url: "",
   });
 
-  const videosDisponibles = [
-    { nombre: "Video Flexiones", url: "https://videos.com/flexiones.mp4" },
-    { nombre: "Video Sentadillas", url: "https://videos.com/sentadillas.mp4" },
-    { nombre: "Video Plancha", url: "https://videos.com/plancha.mp4" },
-  ];
+  const [videosDisponibles, setVideosDisponibles] = useState([]);
+
+  console.log(rutina._id);
+
+  useEffect(() => {
+    const cargarVideos = async () => {
+      try {
+        const response = await archivosApi.getArchivos();
+        setVideosDisponibles(response);
+        console.log("Videos disponibles:", response);
+      } catch (error) {
+        console.error("Error al cargar videos:", error);
+        showAlert("Error al cargar los videos", 5000);
+      }
+    };
+
+    cargarVideos();
+  }, [showAlert, modo]);
 
   const esEditable = modo === "editar";
 
@@ -38,28 +56,51 @@ export default function AlumnoRutinaVer() {
 
   const agregarEjercicio = async () => {
     setLoading(true);
-    setEjercicios([
-      ...ejercicios,
-      { ...nuevoEjercicio, _id: Date.now().toString() },
-    ]);
+    const nuevo = { ...nuevoEjercicio, _id: Date.now().toString() };
+    setEjercicios([...ejercicios, nuevo]);
     setNuevoEjercicio({
       ejercicio: "",
       series: "",
       repeticiones: "",
       descanso: "",
+      url: "",
     });
 
-    //guardar ejercicio en el backend
     const response = await rutinaApi.agregarEjercicioRutina(
       alumnoId,
       rutina._id,
       nuevoEjercicio
     );
+
     if (response.ok) {
       showAlert("Ejercicio agregado correctamente", 5000);
-      setLoading(false);
     } else {
       showAlert("Error al agregar el ejercicio", 5000);
+    }
+    setLoading(false);
+  };
+
+  const guardarCambios = async () => {
+    const rutinaEditada = {
+      nombre,
+      descripcion,
+      tips,
+      ejercicios,
+    };
+
+    const response = await rutinaApi.actualizarRutina(
+      alumnoId,
+      rutina._id,
+      rutinaEditada
+    );
+
+    if (response.ok) {
+      showAlert("Rutina actualizada con éxito", 4000);
+      //await uploadUser();
+      navigate("/admin/alumno/" + alumnoId);
+      setLoading(false);
+    } else {
+      showAlert("Hubo un error al actualizar la rutina", 4000);
     }
   };
 
@@ -70,7 +111,6 @@ export default function AlumnoRutinaVer() {
     }
   };
 
-  // Reemplazá el contenido de return por esto:
   return (
     <div className="rutina-container">
       <h2 className="rutina-titulo">
@@ -207,7 +247,7 @@ export default function AlumnoRutinaVer() {
       {esEditable && (
         <div className="nuevo-ejercicio">
           <h4>Agregar ejercicio nuevo:</h4>
-          <label htmlFor="">Ejercicio</label>
+          <label>Ejercicio</label>
           <input
             type="text"
             placeholder="Ejercicio"
@@ -220,7 +260,7 @@ export default function AlumnoRutinaVer() {
             }
             className="input"
           />
-          <label htmlFor="">Series</label>
+          <label>Series</label>
           <input
             type="text"
             placeholder="Series"
@@ -230,7 +270,7 @@ export default function AlumnoRutinaVer() {
             }
             className="input"
           />
-          <label htmlFor="">Repeticiones</label>
+          <label>Repeticiones</label>
           <input
             type="text"
             placeholder="Repeticiones"
@@ -253,6 +293,21 @@ export default function AlumnoRutinaVer() {
             }
             className="input"
           />
+          <label>Video</label>
+          <select
+            value={nuevoEjercicio.url}
+            onChange={(e) =>
+              setNuevoEjercicio({ ...nuevoEjercicio, url: e.target.value })
+            }
+            className="input"
+          >
+            <option value="">Seleccionar video</option>
+            {videosDisponibles.map((video, idx) => (
+              <option key={idx} value={video.url}>
+                {video.nombre}
+              </option>
+            ))}
+          </select>
           <button onClick={agregarEjercicio} className="btn">
             Guardar Ejercicio
           </button>
@@ -281,16 +336,13 @@ export default function AlumnoRutinaVer() {
         </div>
       )}
 
-      {/* {esEditable && (
+      {esEditable && (
         <div className="guardar-container">
-          <button
-            onClick={() => console.log("Guardar cambios en rutina")}
-            className="btn btn-guardar"
-          >
+          <button onClick={guardarCambios} className="btn btn-guardar">
             Guardar Cambios
           </button>
         </div>
-      )} */}
+      )}
     </div>
   );
 }

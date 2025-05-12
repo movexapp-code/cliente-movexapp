@@ -2,7 +2,9 @@
   padding: 2rem;
   max-width: 100%;
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top: 150px !important
+
+  ;
 }
 
 .rutina-lista {
@@ -12,8 +14,27 @@
   align-items: stretch;
 }
 
-.rutina-card {
-  background-color: #f9fafb;
+.rutina-nombre-rutina {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+.rutina-nombre-p-rutina {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.rutina-fecha {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.rutina-card-rutina {
+  background-color: #f9fafb1b;
   color: #000000;
   border-radius: 1rem;
   padding: 1.5rem;
@@ -21,16 +42,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.rutina-header h3 {
-  margin-bottom: 0.2rem;
-  color: #000000;
-}
-
-.rutina-header p {
-  margin: 0.2rem 0;
-  color: #000000;
 }
 
 .rutina-header .fecha {

@@ -18,7 +18,7 @@ const Alert = ({ message, duration = 3000 }) => {
 
   return (
     <div className={`alert ${visible ? "show" : "hide"}`}>
-      <FiAlertCircle className="alert-icon" />
+      <FiAlertCircle className="alert-icon" color="orange" />
       <span className="alert-message">{message}</span>
     </div>
   );

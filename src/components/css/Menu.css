@@ -55,7 +55,9 @@
 .menu-item:hover {
   color: #ffa528;
 }
-
+.menu-toggle {
+  display: none;
+}
 /* ------------------ RESPONSIVE ------------------ */
 @media screen and (max-width: 768px) {
   .menu-container {

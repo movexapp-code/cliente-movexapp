@@ -39,18 +39,6 @@
   border-color: #f57c00;
 }
 
-.rutina-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: #222;
-}
-
-.rutina-description {
-  margin-bottom: 10px;
-  font-style: italic;
-  color: #555;
-}
-
 .rutina-tips {
   margin: 10px 0 15px;
 }
@@ -178,7 +166,7 @@
 .videos-title-v,
 .videos-subtitle-v {
   text-align: center;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 20px;
 }
 
@@ -231,7 +219,7 @@
 .video-title {
   font-size: 20px;
   margin: 0 0 10px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .video-description {

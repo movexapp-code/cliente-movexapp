@@ -2,7 +2,7 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import "./css/Login.css"; // Importa el archivo CSS
-import logo from "../assets/logocalistenia.png";
+import logo from "../assets/logo.png";
 import { FaWhatsapp } from "react-icons/fa";
 import { CiInstagram, CiYoutube } from "react-icons/ci";
 import Loader from "./Loader"; // Asegúrate de que el componente Loader esté en la ruta correcta
